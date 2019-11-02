@@ -1,1 +1,1 @@
-Local695 theme with Filemaker Integration
+# Genesis theme with Laravel Mix and Ionicons
