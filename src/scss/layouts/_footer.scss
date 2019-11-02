@@ -1,0 +1,65 @@
+/* Site Footer
+---------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: $black;
+  bottom: 0;
+  font-size: 13px;
+  line-height: 1;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: -99;
+}
+
+.gmm-active .site-footer {
+  position: inherit;
+}
+
+.site-footer .genesis-nav-menu .current-menu-item > a,
+.site-footer a,
+.site-footer p {
+  border-bottom: 1px solid transparent;
+  color: $white;
+}
+
+.site-footer .wrap a {
+  padding-bottom: 2px;
+}
+
+.site-footer .genesis-nav-menu .current-menu-item > a:focus,
+.site-footer .genesis-nav-menu .current-menu-item > a:hover,
+.site-footer a:hover,
+.site-footer a:focus,
+.site-footer .genesis-nav-menu a:hover,
+.site-footer .genesis-nav-menu a:focus {
+  border-bottom-color: currentColor;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.site-footer p {
+  margin-bottom: 0;
+}
+
+.site-footer .ion-heart {
+  font-size: 13px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.site-footer .wrap a.footer-logo-link {
+  border-bottom-width: 0;
+  display: inline-block;
+  height: auto;
+  margin-bottom: rem(25px);
+  padding: 0;
+  max-width: rem(300px);
+}
+
+.site-footer .footer-logo {
+  height: auto;
+  width: 100%;
+}

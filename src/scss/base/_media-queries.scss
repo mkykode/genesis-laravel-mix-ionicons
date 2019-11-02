@@ -1,0 +1,303 @@
+/* Media Queries
+---------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1280px) {
+  .before-footer-cta .wrap,
+  .site-inner {
+    max-width: 960px;
+  }
+
+  .content {
+    width: 600px;
+  }
+
+  .sidebar {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .before-footer-cta .wrap,
+  .site-inner {
+    max-width: 720px;
+  }
+
+  .content,
+  .full-width-content .content,
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu a,
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu,
+  .js .nav-primary,
+  .sidebar {
+    width: 100%;
+  }
+
+  .site-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .full-width-content.landing-page .site-inner {
+    margin-top: 80px;
+  }
+
+  .genesis-nav-menu li {
+    float: none;
+  }
+
+  .genesis-responsive-menu .wrap {
+    padding: 0;
+  }
+
+  .genesis-responsive-menu {
+    display: none;
+    position: relative;
+  }
+
+  .site-header > .wrap > .genesis-responsive-menu {
+    transition: none;
+  }
+
+  .genesis-skip-link .skip-link-hidden {
+    display: none;
+    visibility: hidden;
+  }
+
+  .menu-toggle,
+  .sub-menu-toggle {
+    border-width: 0;
+    color: $black;
+    display: block;
+    font-family: $muli;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    visibility: visible;
+    width: auto;
+  }
+
+  .menu-toggle:focus,
+  .menu-toggle:hover,
+  .sub-menu-toggle:focus,
+  .sub-menu-toggle:hover {
+    background: transparent;
+    border-width: 0;
+    box-shadow: none;
+    color: $blue;
+  }
+
+  .js .genesis-nav-menu > .menu-item .sub-menu > .menu-item:first-child,
+  .js .genesis-nav-menu > .menu-item > .sub-menu > .menu-item:last-child,
+  .js .genesis-nav-menu .sub-menu a,
+  .js #genesis-mobile-nav-primary {
+    background-color: $white;
+    color: $black;
+  }
+
+  #genesis-mobile-nav-primary.activated {
+    border-bottom-color: transparent;
+  }
+
+  #genesis-mobile-nav-primary:focus,
+  #genesis-mobile-nav-primary:hover {
+    color: $blue;
+  }
+
+  .menu-toggle {
+    float: right;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 21px;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .menu-toggle::before {
+    font-size: 20px;
+    margin-right: 5px;
+    text-rendering: auto;
+    vertical-align: bottom;
+  }
+
+  .sub-menu-toggle {
+    background: transparent;
+    float: right;
+    font-size: 14px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    z-index: 100;
+  }
+
+  .sub-menu-toggle::before {
+    display: inline-block;
+    text-rendering: auto;
+    transform: rotate(0);
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .sub-menu-toggle.activated::before {
+    transform: rotate(180deg);
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .menu-item {
+    display: block;
+    float: none;
+    position: relative;
+    text-align: left;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .menu-item:focus,
+  .genesis-responsive-menu .genesis-nav-menu .menu-item:hover {
+    position: relative;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu a:focus,
+  .genesis-responsive-menu .genesis-nav-menu a:hover,
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:focus,
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu .menu-item a:hover,
+  .genesis-responsive-menu.nav-primary
+    .genesis-nav-menu
+    .sub-menu
+    .current-menu-item
+    > a {
+    color: $blue;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .menu-item a,
+  .genesis-responsive-menu .toggle-header-search {
+    border: none;
+    margin-bottom: 1px;
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  .genesis-responsive-menu.nav-primary .genesis-nav-menu .sub-menu a {
+    color: $black;
+  }
+
+  .genesis-nav-menu > .menu-item .sub-menu > .menu-item:first-child {
+    padding-top: 0;
+  }
+
+  .genesis-nav-menu > .menu-item .sub-menu > .menu-item:last-child {
+    padding-bottom: 5px;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu::after,
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu::before,
+  .genesis-responsive-menu
+    .genesis-nav-menu
+    > .menu-item-has-children
+    > a::after {
+    content: none;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .menu-item > a:focus ul.sub-menu,
+  .genesis-responsive-menu
+    .genesis-nav-menu
+    .menu-item
+    > a:focus
+    ul.sub-menu
+    .sub-menu {
+    left: 0;
+    margin-left: 0;
+  }
+
+  .genesis-responsive-menu .genesis-nav-menu .sub-menu {
+    clear: both;
+    display: none;
+    margin: 0;
+    opacity: 1;
+    padding-left: 15px;
+    position: static;
+    width: 100%;
+  }
+
+  .genesis-responsive-menu .toggle-header-search {
+    display: none;
+  }
+
+  .pricing-table .one-fifth,
+  .pricing-table .one-fourth,
+  .pricing-table .one-half,
+  .pricing-table .one-third {
+    padding: 30px 40px;
+  }
+
+  .pricing-table .one-fourth,
+  .pricing-table .one-fifth {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 782px) {
+  .before-footer-cta .wrap,
+  .site-inner {
+    max-width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .admin-bar .site-header {
+    top: 46px;
+  }
+
+  .site-header {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .full-width-content.landing-page .content {
+    margin-bottom: 0;
+  }
+
+  .entry-title {
+    font-size: 36px;
+  }
+
+  .after-entry {
+    padding: 30px 40px;
+  }
+
+  .after-entry .enews-widget form {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .before-footer-cta .button {
+    float: none;
+    margin-top: 20px;
+  }
+
+  .five-sixths,
+  .four-sixths,
+  .one-fourth,
+  .one-half,
+  .one-sixth,
+  .one-third,
+  .pricing-table .one-fifth,
+  .pricing-table .one-fourth,
+  .pricing-table .one-half,
+  .pricing-table .one-third,
+  .three-fourths,
+  .three-sixths,
+  .two-fourths,
+  .two-sixths,
+  .two-thirds {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .admin-bar .site-header {
+    position: relative;
+    top: 0;
+  }
+
+  .footer-cta-button {
+    display: block;
+  }
+}

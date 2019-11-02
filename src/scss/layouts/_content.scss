@@ -1,0 +1,455 @@
+/* Structure and Layout
+---------------------------------------------------------------------------- */
+
+/* Site Container
+--------------------------------------------- */
+
+.site-container {
+  background-color: $white;
+  z-index: 99;
+}
+
+.gmm-active .site-container {
+  margin-bottom: 0 !important;
+}
+
+/* Site Inner
+  --------------------------------------------- */
+
+.site-inner,
+.wrap {
+  margin: 0 auto;
+}
+
+.site-inner {
+  background-color: $white;
+  clear: both;
+  margin-top: 100px;
+  max-width: 1200px;
+  position: relative;
+  word-wrap: break-word;
+  z-index: 999;
+}
+
+.archive .site-inner,
+.page-template-page_blog .site-inner {
+  margin-bottom: 100px;
+}
+
+.full-width-content.featured-image .site-inner {
+  margin-top: -220px;
+}
+
+.full-width-content.landing-page .site-inner {
+  margin-bottom: 80px;
+  margin-top: 180px;
+  max-width: 680px;
+}
+
+.genesis-title-hidden .site-inner {
+  margin-top: 0;
+}
+
+/* Column Widths and Positions
+  --------------------------------------------- */
+
+/* Content */
+
+.content {
+  float: right;
+  position: relative;
+  width: 720px;
+}
+
+.content-sidebar .content {
+  float: left;
+}
+
+.full-width-content .content {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 680px;
+}
+
+/* Sidebar */
+
+.sidebar {
+  float: right;
+  width: 360px;
+}
+
+.sidebar-content .sidebar {
+  float: left;
+}
+
+/* Common Classes
+---------------------------------------------------------------------------- */
+
+/* Avatar
+--------------------------------------------- */
+
+.avatar {
+  border-radius: 50%;
+  float: left;
+}
+
+.author-box .avatar,
+.alignleft .avatar {
+  margin-right: 24px;
+}
+
+.alignright .avatar {
+  margin-left: 24px;
+}
+
+.comment .avatar {
+  margin: 0 16px 24px 0;
+}
+
+.entry-avatar .avatar {
+  background-color: $white;
+  float: none;
+  margin-bottom: 40px;
+  margin-top: -60px;
+  padding: 5px;
+}
+
+/* Content Area
+---------------------------------------------------------------------------- */
+
+/* Entries
+--------------------------------------------- */
+
+.entry-background {
+  background-position: center;
+  background-size: cover;
+  display: block;
+  height: 460px;
+  position: relative;
+  width: 100%;
+}
+
+.entry {
+  margin-bottom: 100px;
+}
+
+.full-width-content.landing-page .entry {
+  margin-bottom: 0;
+}
+
+.entry-content ol,
+.entry-content ul {
+  margin-bottom: 30px;
+  margin-left: 40px;
+}
+
+.entry-content ol > li {
+  list-style-type: decimal;
+}
+
+.entry-content ul > li {
+  list-style-type: disc;
+}
+
+.entry-content ol ul > li,
+.entry-content ul ul > li {
+  list-style-type: circle;
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+  margin-bottom: 0;
+}
+
+.entry-content code {
+  background-color: $black;
+  color: $light-gray;
+}
+
+.entry-content .intro {
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+p.center {
+  text-align: center;
+}
+
+/* Entry Messages
+--------------------------------------------- */
+
+.message {
+  padding: 25px 30px;
+}
+
+.message,
+.message a {
+  color: $white;
+}
+
+.message a {
+  border-bottom: 1px solid $white;
+}
+
+.message a:hover,
+.message a:focus {
+  border-bottom: none;
+}
+
+.message.green {
+  background-color: #00a86d;
+}
+
+.message.orange {
+  background-color: #cc4b00;
+}
+
+.message.red {
+  background-color: #be0040;
+}
+
+/* Entry Meta
+--------------------------------------------- */
+
+p.entry-meta {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.entry-meta a {
+  color: $black;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+  color: $blue;
+  text-decoration: none;
+}
+
+.single.full-width-content .entry-header {
+  text-align: center;
+}
+
+.entry-header::after {
+  border-bottom: 1px solid $black;
+  content: '';
+  display: block;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  width: 2.5%;
+}
+
+.single.full-width-content .entry-header::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar .entry-header::after {
+  display: none;
+}
+
+.entry-footer {
+  margin-top: 30px;
+}
+
+.entry-categories::before,
+.entry-tags::before {
+  display: inline-block;
+  font: normal 16px/1 'ionicons'; /* stylelint-disable-line */
+  margin-right: 8px;
+  margin-top: -5px;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+}
+
+.entry-categories::before {
+  content: '\f3ca';
+}
+
+.entry-tags::before {
+  content: '\f48d';
+}
+
+.entry-categories,
+.entry-tags {
+  display: block;
+}
+
+/* Pagination
+--------------------------------------------- */
+
+.pagination {
+  clear: both;
+}
+
+.archive-pagination a {
+  background-color: $black;
+  border-radius: 3px;
+  color: $white;
+  font-family: $helvetica;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 1;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.archive-pagination a:hover,
+.archive-pagination a:focus,
+.archive-pagination li.active a {
+  background-color: $blue;
+  box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.adjacent-entry-pagination {
+  margin-bottom: 0;
+}
+
+.archive-pagination li {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Comments
+--------------------------------------------- */
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+  font-size: 17px;
+}
+
+.entry-comments,
+.entry-pings {
+  margin-bottom: 100px;
+}
+
+.comment-notes {
+  text-align: center;
+}
+
+.comment-list li {
+  padding: 40px 0 0 30px;
+}
+
+.comment-list .depth-1 {
+  padding-left: 0;
+}
+
+.comment-header {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.comment-content {
+  clear: both;
+}
+
+.comment-content p {
+  margin-bottom: 20px;
+}
+
+.comment-content ul > li {
+  list-style-type: disc;
+}
+
+.comment-respond {
+  margin-bottom: 100px;
+}
+
+.comment-respond input[type='email'],
+.comment-respond input[type='text'],
+.comment-respond input[type='url'] {
+  width: 100%;
+}
+
+.comment-respond label {
+  display: block;
+  margin-right: 12px;
+}
+
+.comment-header p {
+  margin-bottom: 0;
+}
+
+.comment-form-cookies-consent label {
+  display: inline;
+  padding-left: 10px;
+}
+
+.entry-pings .reply {
+  display: none;
+}
+
+/* Before Footer CTA
+---------------------------------------------------------------------------- */
+
+.before-footer-cta {
+  background: $blue;
+  background: linear-gradient(45deg, #06c, #02cbfb);
+  line-height: 1.5;
+  padding-bottom: 40px;
+  padding-top: 45px;
+  text-align: center;
+}
+
+.before-footer-cta .wrap {
+  max-width: 1200px;
+}
+
+.before-footer-cta p:last-of-type,
+.before-footer-cta .widget:last-of-type {
+  margin-bottom: 0;
+}
+
+.before-footer-cta,
+.before-footer-cta a,
+.before-footer-cta p,
+.before-footer-cta .widget-title {
+  color: $white;
+}
+
+.before-footer-cta a {
+  border-bottom: 1px solid currentColor;
+}
+
+.before-footer-cta a:focus,
+.before-footer-cta a:hover {
+  border-bottom: 1px solid transparent;
+}
+
+.before-footer-cta p {
+  font-size: 20px;
+}
+
+.before-footer-cta button,
+.before-footer-cta input[type='button'],
+.before-footer-cta input[type='reset'],
+.before-footer-cta input[type='submit'],
+.before-footer-cta a.button,
+.before-footer-cta a.more-link {
+  background-color: $white;
+  border-width: 0;
+  color: $black;
+  margin: 5px 10px;
+  padding: 15px 20px;
+  vertical-align: middle;
+}
+
+.before-footer-cta button:focus,
+.before-footer-cta button:hover,
+.before-footer-cta input[type='button']:focus,
+.before-footer-cta input[type='button']:hover,
+.before-footer-cta input[type='reset']:focus,
+.before-footer-cta input[type='reset']:hover,
+.before-footer-cta input[type='submit']:focus,
+.before-footer-cta input[type='submit']:hover,
+.before-footer-cta .button:hover,
+.before-footer-cta .button:focus {
+  background-color: $black;
+  color: $white;
+}

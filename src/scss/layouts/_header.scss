@@ -1,0 +1,102 @@
+/* Site Header
+---------------------------------------------------------------------------- */
+
+.site-header {
+  background-color: $black;
+  border-bottom: 1px solid transparent;
+  min-height: 80px;
+  padding: 10px 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  // width: 100%;
+  z-index: 9999;
+  @include media('>desktop') {
+    .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > * {
+        flex: 1 auto;
+      }
+    }
+  }
+}
+
+.admin-bar .site-header {
+  top: 32px;
+}
+
+.site-header > .wrap > * {
+  transition: all 0.4s ease-in-out;
+}
+
+.site-header.search-visible > .wrap > :not(.header-search-wrap) {
+  opacity: 0;
+}
+
+.shadow .site-header,
+.site-header.search-visible {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Title Area
+  --------------------------------------------- */
+
+.title-area {
+  // float: left;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  // width: 100%;
+  // max-width: 200px;
+}
+
+.wp-custom-logo .title-area {
+  // height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 0;
+  // width: 133px;
+  text-align: center;
+}
+
+.site-title {
+  font-family: $futura;
+  font-size: rem(40px);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  // text-align: center;
+  letter-spacing: 10px;
+}
+
+.site-title a,
+.site-title a:hover,
+.site-title a:focus {
+  color: $white;
+  text-decoration: none;
+}
+
+.wp-custom-logo .site-title > a {
+  float: left;
+  min-height: 50px;
+  width: 100%;
+}
+
+.site-description,
+.wp-custom-logo .site-title {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.site-header .custom-logo-link .custom-logo {
+  height: auto;
+  width: auto;
+}

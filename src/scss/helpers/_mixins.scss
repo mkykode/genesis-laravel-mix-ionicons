@@ -1,0 +1,185 @@
+@mixin flex-it(
+  $child: '*',
+  $flex-direction: 'row',
+  $flex-wrap: 'wrap',
+  $flex-shrink: 1,
+  $flex-basis: 'auto',
+  $justify-content: 'space-between',
+  $align-items: 'center',
+  $align-content: 'space-between'
+) {
+  display: flex;
+  justify-content: unquote($justify-content);
+  align-items: unquote($align-items);
+  align-content: unquote($align-content);
+  flex-flow: unquote($flex-direction) unquote($flex-wrap);
+  > #{unquote($child)} {
+    flex: unquote($flex-shrink) unquote($flex-basis);
+  }
+}
+
+// Using pareseInt function
+@mixin rem($property, $values) {
+  $px: ();
+  $rem: ();
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: append($px, $value);
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+
+      @if $unit == 'px' {
+        $px: append($px, $value);
+        $rem: append($rem, ($val / 10 + rem));
+      }
+
+      @if $unit == 'rem' {
+        $px: append($px, ($val * 10 + px));
+        $rem: append($rem, $value);
+      }
+    }
+  }
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    #{$property}: $rem;
+  }
+}
+
+// Only with centered content
+@mixin full-width($device-screen: $screen-md) {
+  overflow-x: hidden;
+  // subtract scrollbar
+  width: calc(100vw - 8px);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: calc(-50vw + 8px);
+  @media only screen and (max-width: $device-screen) {
+    width: 100vw;
+  }
+}
+
+//align
+
+@mixin center-align-children($flex: true, $child: '*', $align: 'both') {
+  @if ($flex == true) {
+    display: flex;
+    @if ($align != 'vertical') {
+      justify-content: center;
+    }
+    @if ($align == 'both' or $align == 'vertical') {
+      align-items: center;
+    }
+  } @else {
+    position: relative;
+    #{unquote($child)} {
+      position: absolute;
+      @if ($align == 'both') {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } @else if ($align == 'vertical') {
+        top: 50%;
+        transform: translateY(-50%);
+      } @else if ($align == 'horizontal') {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+/// poly-fluid-sizing
+/// Generate linear interpolated size values through multiple break points
+/// @param $property - A string CSS property name
+/// @param $map - A SASS map of viewport unit and size value pairs
+/// @requires function linear-interpolation
+/// @requires function map-sort
+/// @example
+///   @include poly-fluid-sizing('font-size', (576px: 22px, 768px: 24px, 992px: 34px));
+/// @author Jake Wilson <jake.e.wilson@gmail.com>
+@mixin poly-fluid-sizing($property, $map) {
+  // Get the number of provided breakpoints
+  $length: length(map-keys($map));
+  // Error if the number of breakpoints is < 2
+  @if ($length < 2) {
+    @error "poly-fluid-sizing() $map requires at least values";
+  }
+  // Sort the map by viewport width (key)
+  $map: map-sort($map);
+  $keys: map-keys($map);
+  // Minimum size
+  #{$property}: map-get($map, nth($keys, 1));
+  // Interpolated size through breakpoints
+  @for $i from 1 through ($length - 1) {
+    @media (min-width: nth($keys, $i)) {
+      $value1: map-get($map, nth($keys, $i));
+      $value2: map-get($map, nth($keys, ($i + 1)));
+      // If values are not equal, perform linear interpolation
+      @if ($value1 != $value2) {
+        #{$property}: linear-interpolation(
+          (
+            nth($keys, $i): $value1,
+            nth($keys, ($i + 1)): $value2,
+          )
+        );
+      } @else {
+        #{$property}: $value1;
+      }
+    }
+  }
+  // Maximum size
+  @media (min-width: nth($keys, $length)) {
+    #{$property}: map-get($map, nth($keys, $length));
+  }
+}
+
+// Media queries
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(
+          #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+@mixin fluid-line-height($min-vw, $max-vw, $min-line-height, $max-line-height) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-line-height);
+  $u4: unit($max-line-height);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      line-height: $min-line-height;
+      @media screen and (min-width: $min-vw) {
+        line-height: calc(
+          #{$min-line-height} + #{strip-unit($max-line-height - $min-line-height)} *
+            ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+        );
+      }
+      @media screen and (min-width: $max-vw) {
+        line-height: $max-line-height;
+      }
+    }
+  }
+}

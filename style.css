@@ -1,0 +1,70 @@
+/*
+Theme Name: Local 695
+Theme URI: https://monkeykodeagency.com/
+Description: Custom theme for Local 695.
+Author: Monkey Kode
+Author URI: https://monkeykodeagency.com/
+Version: 1.1.0
+Template: genesis
+
+License: GPL-2.0-or-later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Text Domain: local695
+*/
+
+/* Table of Contents
+	- HTML5 Reset
+		- Baseline Normalize
+		- Box Sizing
+		- Float Clearing
+	- Defaults
+		- Typographical Elements
+		- Headings
+		- Objects
+		- Gallery
+		- Forms
+		- Tables
+		- Screen Reader Text
+	- Structure and Layout
+		- Site Container
+		- Site Inner
+		- Column Widths and Positions
+		- Column Classes
+	- Common Classes
+		- Avatar
+		- Genesis
+		- Search Form
+		- Titles
+		- WordPress
+	- Widgets
+		- Featured Content
+	- Plugins
+		- Genesis eNews Extended
+		- Genesis Author Pro / Genesis Portfolio Pro
+		- Jetpack
+		- WPForms
+	- Skip Links
+	- Site Header
+		- Title Area
+	- Site Navigation
+		- Header Menu
+		- Header Search
+		- Footer Menu
+		- Accessible Menu
+	- Content Area
+		- Entries
+		- Entry Messages
+		- Entry Meta
+		- Pagination
+		- Comments
+		- Pricing Page
+	- Sidebar
+	- Before Footer CTA
+	- Site Footer
+	- Media Queries
+		- Max-width: 1280px
+		- Max-width: 1023px
+		- Max-width: 782px
+		- Max-width: 600px
+*/
